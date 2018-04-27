@@ -3,6 +3,91 @@
 
   <%= form_tag "/business_case/#{@business_case.id}", method: "patch" do %>
   <input type="text" name="title" value="<%= @business_case.title %>">
+
+
+  <span>Localisation de l'entreprise cliente : </span>
+  <select name="localisation">
+    <option value="France">France</option>
+    <option value="Europe">Europe</option>
+    <option value="Amerique">Amerique</option>
+    <option value="Asie">Asie</option>
+    <option value="Afrique">Afrique</option>
+    <option value="Moyen-Orient">Moyen-Orient</option>
+  </select>
+  <p></p>
+  <br>
+
+
+  <span>Taille de l'entreprise cliente : </span>
+  <select name="corporate_size">
+    <option value="0-1m">0-1m</option>
+    <option value="1-10m">1-10m</option>
+    <option value="10-50m">10-50m</option>
+    <option value="50-250m">50-250m</option>
+    <option value="250-1000m">250-1000m</option>
+    <option value=">1000m">>1000m</option>
+  </select>
+  <p></p>
+  <br>
+
+
+  <span>Industrie de l'entreprise cliente : </span>
+
+  <select name="industry">
+    <% @industries.each do |industry| %>
+    <% if industry == @business_case.industry %>
+    <% is_selected = "selected" %>
+    <% else %>
+    <% is_selected = "" %>
+    <% end %>
+
+
+
+    <option value="<%= industry %>" <%= is_selected %> ><%= industry %></option>
+
+    <% end %>
+
+  </select>
+  <p></p>
+  <br>
+
+
+  <span>Expertise utilisee par le consultant : </span>
+  <select name="expertise">
+    <option value="Finance">Finance</option>
+    <option value="Strategie">Strategie Goods</option>
+    <option value="Organisation">Organisation</option>
+    <option value="Digital">Digital</option>
+    <option value="Sales & Marketing">Sales & Marketing</option>
+    </select>
+  <p></p>
+  <br>
+
+
+  <span>Le problème du client : </span>
+  <%= text_area(:business_case, :client_problem, cols: 60, rows: 5) %>
+  <p></p>
+  <br>
+
+
+  <span>Methodologie : </span>
+  <%= text_area(:business_case, :methodology, cols: 60, rows: 5) %>
+  <p></p>
+  <br>
+
+
+  <span>Resultats : </span>
+  <%= text_area(:business_case, :results, cols: 60, rows: 5) %>
+  <p></p>
+  <br>
+
+  <span>Commentaires client : </span>
+  <%= text_area(:business_case, :client_comments, cols: 60, rows: 5) %>
+  <p></p>
+  <br>
+
+
+
   <input type="submit" value="Editer">
   <% end %>
 

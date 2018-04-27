@@ -3,8 +3,44 @@
 
 <% if @business_case %>
 <p>
-    <%= @business_case.title %>
+    Titre : <%= @business_case.title %>
 </p>
+
+<p>
+    Localisation de l'entreprise cliente : <%= @business_case.localisation %>
+</p>
+
+<p>
+    Taille de l'entreprise cliente : <%= @business_case.corporate_size %>
+</p>
+
+<p>
+    Industrie de l'entreprise cliente : <%= @business_case.industry %>
+</p>
+
+<p>
+    L'expertise utilisée par le consultant : <%= @business_case.expertise %>
+</p>
+
+<p>
+    Le problème du client : <%= @business_case.client_problem %>
+</p>
+
+<p>
+    La méthodologie utilisée par le consultant : <%= @business_case.methodology %>
+</p>
+
+
+<p>
+    Les résultats obtenus par le consultant : <%= @business_case.results %>
+</p>
+
+
+<p>
+    Le commentaire du client : <%= @business_case.client_comments %>
+</p>
+
+
 
 <% else %>
 <p>

@@ -8,8 +8,18 @@ class BusinessCaseController < ApplicationController
   end
 
   def create
-    @business_case = BusinessCase.create title: params["title"]
-    puts @business_case.valid?
+    @business_case = BusinessCase.create(
+      title: params["title"],
+      client_problem: params["business_case"]["client_problem"],
+      methodology: params["business_case"]["methodology"],
+      results: params["business_case"]["results"],
+      client_comments: params["business_case"]["client_comments"],
+      localisation: params["localisation"],
+      corporate_size: params["corporate_size"],
+      industry: params["industry"],
+      expertise: params["expertise"]
+      )
+    puts params
     if @business_case.valid?
       puts 'VALIDE'
       redirect_to "/business_case"
@@ -25,6 +35,15 @@ class BusinessCaseController < ApplicationController
   end
 
   def edit
+    @industries = [
+      "Agro",
+      "Capital Good",
+      "Finance",
+      "IT",
+      "Aero",
+      "Retail",
+      "Jeremy"
+    ]
     id = params["id"]
     @business_case = BusinessCase.where(id: id).first
   end
