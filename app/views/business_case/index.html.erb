@@ -1,0 +1,21 @@
+<h1>BusinessCase#index</h1>
+<p>On affiche un peu du biz case</p>
+
+<% if @business_cases.length > 0 %>
+
+<% @business_cases.each do |business_case| %>
+<a href=<%= "/business_case/#{business_case.id}" %>><p>=><%= business_case.title %></p></a>
+<% end %>
+
+<% else %>
+  <p>Bah non, on n'a rien a afficher !</p>
+  <% end %>
+
+
+
+  <p>
+    -----------------------------------------
+  </p>
+
+
+<a href="/business_case/new">Creer un nouveau Business Case</a>

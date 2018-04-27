@@ -1,0 +1,12 @@
+<h1>BusinessCase#new</h1>
+<p>_</p>
+
+<%= form_tag "/business_case", method: "post" do %>
+<input type="text" name="title"/>
+<input type="submit" value="Valider">
+<% end %>
+<% if @business_case %>
+<%= @business_case.errors.messages %>
+<% else %>
+<p>BusinessCase n'existe pas</p>
+<% end %>

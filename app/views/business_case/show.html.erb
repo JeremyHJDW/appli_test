@@ -1,0 +1,17 @@
+<h1>BusinessCase#show</h1>
+<p>On affiche un seul BC</p>
+
+<% if @business_case %>
+<p>
+    <%= @business_case.title %>
+</p>
+
+<% else %>
+<p>
+    Le truc c'est que ton BC il existe pas !...
+</p>
+<% end %>
+
+<a href=<%= "/business_case/" %>><p>Retour vers l'index</p></a>
+<a href=<%= "/business_case/#{@business_case.id}/edit" %>><p>Editer</p></a>
+<a href=<%= "/business_case/#{@business_case.id}/delete" %>><p>Supprimer</p></a>

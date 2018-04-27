@@ -1,0 +1,11 @@
+<h1>BusinessCase#edit</h1>
+<p>On peut modifier le biz case :<%= @title %></p>
+
+  <%= form_tag "/business_case/#{@business_case.id}", method: "patch" do %>
+  <input type="text" name="title" value="<%= @business_case.title %>">
+  <input type="submit" value="Editer">
+  <% end %>
+
+  <% if @business_case %>
+  <%= @business_case.errors.messages %>
+  <% end %>

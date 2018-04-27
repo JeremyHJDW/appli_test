@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  localisation: MyString
+  industry: MyString
+  corporate_size: MyString
+  expertise: MyString
+  client_problem: MyText
+  methodology: MyText
+  results: MyText
+  client_comments: MyString
+  link: MyText
+
+two:
+  localisation: MyString
+  industry: MyString
+  corporate_size: MyString
+  expertise: MyString
+  client_problem: MyText
+  methodology: MyText
+  results: MyText
+  client_comments: MyString
+  link: MyText

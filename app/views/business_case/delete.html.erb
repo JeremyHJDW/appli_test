@@ -1,0 +1,6 @@
+<h1>BusinessCase#delete</h1>
+<p>Etes-vous certain de vouloir supprimer le biz case <%= @business_case.title %></p>
+
+  <%= form_tag "/business_case/#{@business_case.id}", method: "delete" do %>
+    <input type="submit" value="Oui, je supprime">
+  <% end %>
