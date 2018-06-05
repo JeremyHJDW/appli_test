@@ -1,0 +1,11 @@
+<select name="<% attribute %>">
+
+  <% target = "s" %>
+  <% Lists::Localisations.each do |item| %>
+
+  <option value="<%= item %>" > <%= item %></option>
+
+  <% end %>
+
+</select>
+<%= target %>

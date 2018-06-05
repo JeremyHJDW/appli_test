@@ -35,23 +35,29 @@ class BusinessCaseController < ApplicationController
   end
 
   def edit
-    @industries = [
-      "Agro",
-      "Capital Good",
-      "Finance",
-      "IT",
-      "Aero",
-      "Retail",
-      "Jeremy"
-    ]
+
+
     id = params["id"]
     @business_case = BusinessCase.where(id: id).first
   end
 
+
+
   def update
     id = params["id"]
+
     @business_case = BusinessCase.where(id: id).first
+
+    puts params
     @business_case.title = params["title"]
+    @business_case.industry = params["industry"]
+    @business_case.corporate_size = params["corporate_size"]
+    @business_case.localisation = params["localisation"]
+    @business_case.expertise = params["expertise"]
+    @business_case.client_problem = params["business_case"]["client_problem"]
+    @business_case.methodology = params["business_case"]["methodology"]
+    @business_case.results = params["business_case"]["results"]
+    @business_case.client_comments = params["business_case"]["client_comments"]
     if @business_case.save
       puts 'update OK'
       redirect_to "/business_case/#{id}"

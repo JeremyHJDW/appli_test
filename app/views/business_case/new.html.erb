@@ -8,26 +8,31 @@
 <br>
 
 <span>Localisation de l'entreprise cliente : </span>
+
+<%= render 'business_case/select_menus/select_menu', :attribute => "localisation" %>
 <select name="localisation">
-  <option value="France">France</option>
-  <option value="Europe">Europe</option>
-  <option value="Amerique">Amerique</option>
-  <option value="Asie">Asie</option>
-  <option value="Afrique">Afrique</option>
-  <option value="Moyen-Orient">Moyen-Orient</option>
+
+  <% Lists::Localisations.each do |localisation| %>
+
+  <option value="<%= localisation %>" > <%= localisation %></option>
+
+  <% end %>
+
 </select>
+
 <p></p>
 <br>
 
 
 <span>Taille de l'entreprise cliente : </span>
 <select name="corporate_size">
-  <option value="0-1m">0-1m</option>
-  <option value="1-10m">1-10m</option>
-  <option value="10-50m">10-50m</option>
-  <option value="50-250m">50-250m</option>
-  <option value="250-1000m">250-1000m</option>
-  <option value=">1000m">>1000m</option>
+
+  <% Lists::Corporate_sizes.each do |corporate_size| %>
+
+  <option value="<%= corporate_size %>" ><%= corporate_size %></option>
+
+  <% end %>
+
 </select>
 <p></p>
 <br>
@@ -35,12 +40,13 @@
 
 <span>Industrie de l'entreprise cliente : </span>
 <select name="industry">
-  <option value="Agro">Agro</option>
-  <option value="Capital Goods">Capital Goods</option>
-  <option value="Finance">Finance</option>
-  <option value="IT">IT</option>
-  <option value="Aero">Aero</option>
-  <option value="Retail">Retail</option>
+
+  <% Lists::Industries.each do |industry| %>
+
+  <option value="<%= industry %>" ><%= industry %></option>
+
+  <% end %>
+
 </select>
 <p></p>
 <br>
@@ -48,11 +54,13 @@
 
 <span>Expertise utilisee par le consultant : </span>
 <select name="expertise">
-  <option value="Finance">Finance</option>
-  <option value="Strategie">Strategie Goods</option>
-  <option value="Organisation">Organisation</option>
-  <option value="Digital">Digital</option>
-  <option value="Sales & Marketing">Sales & Marketing</option>
+
+<% Lists::Expertises.each do |expertise| %>
+
+<option value="<%= expertise %>" ><%= expertise %></option>
+
+<% end %>
+
   </select>
 <p></p>
 <br>
